@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elaf Elsaeed | Cybersecurity Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body { font-family: 'Lato', sans-serif; cursor: none; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Poppins', sans-serif; }
+    .hero-bg {
+      background-color: #1a1a2e;
+      background-image:
+        radial-gradient(circle at 15% 50%, rgba(148,108,242,.15), transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(30,158,168,.15), transparent 40%);
+    }
+    .glass-effect {
+      background: rgba(26,26,46,.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .profile-img { object-fit: cover; object-position: center; width: 320px; height: 320px; }
+    .cursor-dot { width: 8px; height: 8px; background-color: #946cf2; border-radius: 50%; position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; z-index: 9999; transition: width .2s, height .2s; }
+    .cursor-dot.hovered { width: 30px; height: 30px; background-color: rgba(148,108,242,.3); }
+    .typing-cursor::after { content: '|'; animation: blink 1s step-end infinite; }
+    @keyframes blink { from, to {opacity:1} 50% {opacity:0} }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s, transform .8s; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .glow-on-hover { box-shadow: 0 0 5px #946cf2, 0 0 15px #946cf233; }
+    .glow-on-hover:hover { box-shadow: 0 0 10px #946cf2, 0 0 30px #946cf255, 0 0 50px #946cf233; }
+  </style>
+</head>
+<body class="bg-[#12121f] text-gray-300">
+
+  <div class="cursor-dot" id="cursor-dot"></div>
+
+  <header class="sticky top-0 z-50 glass-effect">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-3xl font-bold text-white tracking-widest">EE</a>
+      <div class="hidden md:flex space-x-6 items-center">
+        <a href="#about" class="hover:text-[#946cf2] transition duration-300">About</a>
+        <a href="#projects" class="hover:text-[#946cf2] transition duration-300">Projects</a>
+        <a href="#skills" class="hover:text-[#946cf2] transition duration-300">Skills</a>
+        <a href="#awards" class="hover:text-[#946cf2] transition duration-300">Awards</a>
+        <a href="#certificates" class="hover:text-[#946cf2] transition duration-300">Certs</a>
+        <a href="#work-history" class="hover:text-[#946cf2] transition duration-300">Work</a>
+        <a href="#contact" class="bg-[#946cf2] text-white px-4 py-2 rounded-md hover:bg-opacity-80 transition duration-300 glow-on-hover">Contact</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-white focus:outline-none">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden">
+      <a href="#about" class="block py-2 px-4 text-sm hover:bg-[#946cf2]">About</a>
+      <a href="#projects" class="block py-2 px-4 text-sm hover:bg-[#946cf2]">Projects</a>
+      <a href="#skills" class="block py-2 px-4 text-sm hover:bg-[#946cf2]">Skills</a>
+      <a href="#awards" class="block py-2 px-4 text-sm hover:bg-[#946cf2]">Awards</a>
+      <a href="#certificates" class="block py-2 px-4 text-sm hover:bg-[#946cf2]">Certs</a>
+      <a href="#work-history" class="block py-2 px-4 text-sm hover:bg-[#946cf2]">Work</a>
+      <a href="#contact" class="block py-2 px-4 text-sm hover:bg-[#946cf2]">Contact</a>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-12">
+
+    <section id="home" class="hero-bg min-h-[80vh] flex items-center rounded-2xl p-8 -mt-12">
+      <div class="max-w-4xl text-center mx-auto">
+        <h1 id="hero-headline" class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4 min-h-[144px] md:min-h-[192px]">
+          <span class="typing-cursor"></span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 reveal">
+          A dedicated Cybersecurity Engineering student passionate about turning academic theory into real-world defense. Experienced in threat analysis and committed to community leadership, I am ready to bring a unique blend of technical skill and collaborative spirit to a dynamic SOC analyst role.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4 reveal">
+          <a href="#projects" class="bg-[#946cf2] text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-80 transition duration-300 glow-on-hover w-full sm:w-auto text-center">
+            <i class="fas fa-folder-open mr-2"></i> View My Projects
+          </a>
+         
+          <a href="assets/ElafElsaeed_CV.pdf" download="ElafElsaeed_CV.pdf"
+             class="border-2 border-[#946cf2] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#946cf2] transition duration-300 w-full sm:w-auto text-center">
+             <i class="fas fa-file-download mr-2"></i> Download CV
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-20">
+      <h2 class="text-4xl font-bold text-white text-center mb-12 reveal">About Me</h2>
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/3 reveal">
+          <img src="assets/aboutme.jpg" alt="Elaf Elsaeed"
+               class="profile-img rounded-full shadow-lg border-4 border-[#946cf2]/50 mx-auto">
+        </div>
+        <div class="md:w-2/3 reveal">
+          <h3 class="text-2xl font-semibold text-white mb-4">The Art of Digital Defense</h3>
+          <p class="mb-8">I believe that security is an art of both defense and detection. My journey in cybersecurity has taught me that the true challenge isn't just building secure systems, but also mastering the art of finding hidden threats and turning complex data into clear, actionable intelligence. I am driven by a passion for solving puzzles and a commitment to helping teams stay secure in an ever-evolving digital landscape.
+          </p>
+          <h3 class="text-2xl font-semibold text-white mb-4">My Core Capabilities</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glass-effect p-6 rounded-lg reveal">
+              <i class="fas fa-search-plus text-3xl text-[#946cf2] mb-3"></i>
+              <h4 class="font-semibold text-white mb-1">Digital Forensics</h4>
+              <p class="text-sm text-gray-400">Evidence collection, log analysis, and professional reporting.</p>
+            </div>
+            <div class="glass-effect p-6 rounded-lg reveal" style="transition-delay: 100ms;">
+              <i class="fas fa-shield-alt text-3xl text-[#946cf2] mb-3"></i>
+              <h4 class="font-semibold text-white mb-1">Network Security</h4>
+              <p class="text-sm text-gray-400">Secure servers, configure firewalls, and monitor traffic.</p>
+            </div>
+            <div class="glass-effect p-6 rounded-lg reveal" style="transition-delay: 200ms;">
+              <i class="fas fa-users-cog text-3xl text-[#946cf2] mb-3"></i>
+              <h4 class="font-semibold text-white mb-1">Active Directory</h4>
+              <p class="text-sm text-gray-400">User authentication, access control, and policy enforcement.</p>
+            </div>
+            <div class="glass-effect p-6 rounded-lg reveal" style="transition-delay: 300ms;">
+              <i class="fas fa-code text-3xl text-[#946cf2] mb-3"></i>
+              <h4 class="font-semibold text-white mb-1">Web Development</h4>
+              <p class="text-sm text-gray-400">Build and maintain secure websites with HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="glass-effect p-6 rounded-lg reveal" style="transition-delay: 400ms;">
+              <i class="fas fa-server text-3xl text-[#946cf2] mb-3"></i>
+              <h4 class="font-semibold text-white mb-1">IT & System Admin</h4>
+              <p class="text-sm text-gray-400">Troubleshooting systems, managing servers (Linux/Windows), and NFS setup.</p>
+            </div>
+            <div class="glass-effect p-6 rounded-lg reveal" style="transition-delay: 500ms;">
+              <i class="fas fa-chalkboard-teacher text-3xl text-[#946cf2] mb-3"></i>
+              <h4 class="font-semibold text-white mb-1">Security Training</h4>
+              <p class="text-sm text-gray-400">Simplifying complex security concepts for teams.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-20">
+      <h2 class="text-4xl font-bold text-white text-center mb-12 reveal"> Projects & Case Studies</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="glass-effect rounded-xl p-6 flex flex-col hover:border-[#946cf2] transition-all duration-300 transform hover:-translate-y-2 reveal">
+          <i class="fas fa-globe text-3xl text-[#946cf2] mb-4"></i>
+          <h3 class="text-xl font-bold text-white mb-2">Astra CyberSecurity Website</h3>
+          <p class="text-gray-400 text-sm mb-4 flex-grow">As part of a dynamic three-person team, I developed the primary online portal for our university's cybersecurity community, using HTML, CSS, and JavaScript to connect students with essential resources.</p>
+        </div>
+        <div class="glass-effect rounded-xl p-6 flex flex-col hover:border-[#946cf2] transition-all duration-300 transform hover:-translate-y-2 reveal" style="transition-delay: 200ms;">
+          <i class="fas fa-book-open text-3xl text-[#946cf2] mb-4"></i>
+          <h3 class="text-xl font-bold text-white mb-2">Published Research Paper</h3>
+          <p class="text-gray-400 text-sm mb-4 flex-grow">I co-authored and published a peer-reviewed research paper on the "Spectral Collocation Algorithm," sharpening my analytical and collaborative skills within a team of four.</p>
+        </div>
+        <div class="glass-effect rounded-xl p-6 flex flex-col hover:border-[#946cf2] transition-all duration-300 transform hover:-translate-y-2 reveal" style="transition-delay: 400ms;">
+          <i class="fas fa-shield-alt text-3xl text-[#946cf2] mb-4"></i>
+          <h3 class="text-xl font-bold text-white mb-2">Threat Hunter's Diary</h3>
+          <p class="text-gray-400 text-sm mb-4 flex-grow">An anonymized case study from my internship at Telecom Egypt, detailing how I used IBM QRadar to analyze logs, detect anomalies, and escalate a potential security incident.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-20">
+      <h2 class="text-4xl font-bold text-white text-center mb-12 reveal">My Skills</h2>
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="reveal">
+          <h3 class="text-2xl font-bold text-white mb-4">Technical Skills</h3>
+          <div class="grid grid-cols-2 gap-4 text-center">
+            <div class="glass-effect p-6 rounded-lg"><i class="fas fa-bug text-4xl text-[#946cf2] mb-3"></i><h4 class="font-semibold text-white">SIEM (IBM QRadar)</h4></div>
+            <div class="glass-effect p-6 rounded-lg"><i class="fas fa-user-secret text-4xl text-[#946cf2] mb-3"></i><h4 class="font-semibold text-white">Digital Forensics</h4></div>
+            <div class="glass-effect p-6 rounded-lg"><i class="fas fa-search-plus text-4xl text-[#946cf2] mb-3"></i><h4 class="font-semibold text-white">Vulnerability Assessment</h4></div>
+            <div class="glass-effect p-6 rounded-lg"><i class="fab fa-python text-4xl text-[#946cf2] mb-3"></i><h4 class="font-semibold text-white">Python</h4></div>
+            <div class="glass-effect p-6 rounded-lg"><i class="fas fa-network-wired text-4xl text-[#946cf2] mb-3"></i><h4 class="font-semibold text-white">Cisco DNA</h4></div>
+            <div class="glass-effect p-6 rounded-lg"><i class="fas fa-fire-alt text-4xl text-[#946cf2] mb-3"></i><h4 class="font-semibold text-white">Next-Gen Firewalls</h4></div>
+            <div class="glass-effect p-6 rounded-lg"><i class="fab fa-js-square text-4xl text-[#946cf2] mb-3"></i><h4 class="font-semibold text-white">JavaScript</h4></div>
+            <div class="glass-effect p-6 rounded-lg"><i class="fas fa-brain text-4xl text-[#946cf2] mb-3"></i><h4 class="font-semibold text-white">Cyber Threat Intel</h4></div>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay: 200ms;">
+          <h3 class="text-2xl font-bold text-white mb-4">Soft Skills</h3>
+          <div class="grid grid-cols-2 gap-4 text-center">
+            <div class="glass-effect p-6 rounded-lg"><i class="fas fa-users text-4xl text-[#946cf2] mb-3"></i><h4 class="font-semibold text-white">Teamwork</h4></div>
+            <div class="glass-effect p-6 rounded-lg"><i class="fas fa-comments text-4xl text-[#946cf2] mb-3"></i><h4 class="font-semibold text-white">Communication</h4></div>
+            <div class="glass-effect p-6 rounded-lg"><i class="fas fa-cogs text-4xl text-[#946cf2] mb-3"></i><h4 class="font-semibold text-white">Problem-Solving</h4></div>
+            <div class="glass-effect p-6 rounded-lg"><i class="fas fa-eye text-4xl text-[#946cf2] mb-3"></i><h4 class="font-semibold text-white">Attention to Detail</h4></div>
+            <div class="glass-effect p-6 rounded-lg"><i class="fas fa-sync-alt text-4xl text-[#946cf2] mb-3"></i><h4 class="font-semibold text-white">Adaptability</h4></div>
+            <div class="glass-effect p-6 rounded-lg"><i class="fas fa-star text-4xl text-[#946cf2] mb-3"></i><h4 class="font-semibold text-white">Leadership</h4></div>
+            <div class="glass-effect p-6 rounded-lg"><i class="fas fa-lightbulb text-4xl text-[#946cf2] mb-3"></i><h4 class="font-semibold text-white">Critical Thinking</h4></div>
+            <div class="glass-effect p-6 rounded-lg"><i class="fas fa-list-check text-4xl text-[#946cf2] mb-3"></i><h4 class="font-semibold text-white">Prioritization</h4></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates" class="py-20">
+      <h2 class="text-4xl font-bold text-white text-center mb-12 reveal">Certificates</h2>
+      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 text-center md:text-left">
+        <div class="glass-effect p-6 rounded-lg reveal">
+          <h3 class="font-bold text-white text-lg">Huawei HCIA-Security</h3>
+          <p class="text-gray-400">Expected Dec 2024</p>
+        </div>
+        <div class="glass-effect p-6 rounded-lg reveal" style="transition-delay: 100ms;">
+          <h3 class="font-bold text-white text-lg">IBM Security QRadar Functions & Capabilities</h3>
+          <p class="text-gray-400">Aug 2024</p>
+        </div>
+        <div class="glass-effect p-6 rounded-lg reveal" style="transition-delay: 200ms;">
+          <h3 class="font-bold text-white text-lg">Monitor and Detect with IBM Security QRadar</h3>
+          <p class="text-gray-400">Aug 2024</p>
+        </div>
+        <div class="glass-effect p-6 rounded-lg reveal" style="transition-delay: 300ms;">
+          <h3 class="font-bold text-white text-lg">National Strategy and Security – Nasser Military Academy</h3>
+          <p class="text-gray-400">Jul 2022</p>
+        </div>
+        <div class="glass-effect p-6 rounded-lg reveal" style="transition-delay: 400ms;">
+          <h3 class="font-bold text-white text-lg">CIB Egypt – Summer Internship Program Certificate (The Green Leap 2025)</h3>
+          <p class="text-gray-400">Jul 2025</p>
+        </div>
+        <div class="glass-effect p-6 rounded-lg reveal" style="transition-delay: 500ms;">
+          <h3 class="font-bold text-white text-lg">Google Developer Group (GDG) On Campus Co-Lead, Galala University</h3>
+          <p class="text-gray-400">2024–2025</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards" class="py-20">
+      <h2 class="text-4xl font-bold text-white text-center mb-12 reveal">Awards & Leadership</h2>
+      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
+        <div class="text-center md:text-left reveal">
+          <h3 class="text-2xl font-bold text-white mb-4">Key Awards</h3>
+          <div class="flex items-center justify-center md:justify-start mb-4"><i class="fas fa-trophy text-2xl text-yellow-400 mr-4"></i><p><span class="font-bold">Top 2 Winner:</span> Ebda3 13 Festival (Cyber Security Track)</p></div>
+        </div>
+        <div class="reveal" style="transition-delay: 200ms;">
+          <h3 class="text-2xl font-bold text-white mb-4 text-center md:text-left">Leading the Charge</h3>
+          <ul class="list-none space-y-3">
+            <li><i class="fas fa-star text-[#946cf2] mr-2"></i><span class="font-bold">Vice President,</span> Astra Cybersecurity Club</li>
+            <li><i class="fas fa-star text-[#946cf2] mr-2"></i><span class="font-bold">Startup Manager,</span> Hult Prize Galala University</li>
+            <li><i class="fas fa-star text-[#946cf2] mr-2"></i><span class="font-bold">Co-lead,</span> Google Developer Groups</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="work-history" class="py-20">
+      <h2 class="text-4xl font-bold text-white text-center mb-12 reveal">Work History</h2>
+      <div class="max-w-4xl mx-auto space-y-10">
+        <div class="glass-effect p-6 rounded-xl flex flex-col md:flex-row reveal">
+          <div class="md:w-1/4 text-gray-400 font-semibold mb-4 md:mb-0">
+            <h4 class="text-lg text-white">SOC Analyst Intern</h4>
+            <p>WE Innovate</p>
+            <p>Sep 2025 – Present</p>
+          </div>
+          <div class="md:w-3/4">
+            <ul class="list-disc list-inside space-y-2 text-gray-400">
+              <li>Working on Elasticsearch, Snort, Active Directory, NFS server, and network monitoring to detect, analyze, and respond to security threats in real-time.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="glass-effect p-6 rounded-xl flex flex-col md:flex-row reveal" style="transition-delay: 100ms;">
+          <div class="md:w-1/4 text-gray-400 font-semibold mb-4 md:mb-0">
+            <h4 class="text-lg text-white">IT Specialist (Part-time)</h4>
+            <p>Galala University</p>
+            <p>Jul 2025 – Present</p>
+          </div>
+          <div class="md:w-3/4">
+            <ul class="list-disc list-inside space-y-2 text-gray-400">
+              <li>Provide IT support for students and faculty.</li>
+              <li>Maintain the university website (HTML/CSS/JS).</li>
+              <li>Troubleshoot hardware & network issues and apply endpoint security configurations.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="glass-effect p-6 rounded-xl flex flex-col md:flex-row reveal" style="transition-delay: 200ms;">
+          <div class="md:w-1/4 text-gray-400 font-semibold mb-4 md:mb-0">
+            <h4 class="text-lg text-white">Intern</h4>
+            <p>CIB Egypt – Summer Program</p>
+            <p>Aug 2025 – Sep 2025</p>
+          </div>
+          <div class="md:w-3/4">
+            <ul class="list-disc list-inside space-y-2 text-gray-400">
+              <li>Gained exposure to banking operations, customer service, and teamwork during “The Green Leap” internship program.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="glass-effect p-6 rounded-xl flex flex-col md:flex-row reveal" style="transition-delay: 300ms;">
+          <div class="md:w-1/4 text-gray-400 font-semibold mb-4 md:mb-0">
+            <h4 class="text-lg text-white">Cybersecurity Intern</h4>
+            <p>Telecom Egypt (WE)</p>
+            <p>Aug 2024 – Sep 2024</p>
+          </div>
+          <div class="md:w-3/4">
+            <ul class="list-disc list-inside space-y-2 text-gray-400">
+              <li>Used IBM QRadar SIEM for threat detection.</li>
+              <li>Conducted vulnerability assessments and penetration testing simulation.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 text-center">
+      <h2 class="text-4xl font-bold text-white mb-4 reveal">Let's Connect</h2>
+      <p class="text-lg mb-8 max-w-xl mx-auto reveal">I'm actively seeking entry-level cybersecurity and SOC analyst roles. If you have an opportunity or just want to talk tech, my inbox is always open.</p>
+      <a href="mailto:elafwael5@gmail.com" class="bg-[#946cf2] text-white px-8 py-4 rounded-lg font-semibold hover:bg-opacity-80 transition duration-300 text-lg glow-on-hover reveal">
+        claim Your free creative spark session✨ <i class="fas fa-paper-plane ml-2"></i>
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="bg-[#1a1a2e] py-6 text-center">
+    <div class="container mx-auto px-6">
+      <p class="text-gray-400">&copy; 2025 Elaf Elsaeed. All Rights Reserved.</p>
+      <div class="flex justify-center space-x-4 mt-4">
+        <a href="https://www.linkedin.com/in/elaf-elsaeed-eg/" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      }
+
+      // Smooth scroll for in-page anchors, safe for href="#" and missing targets
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetSel = this.getAttribute('href') || '';
+          if (targetSel === '#' || targetSel.length === 0) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+            return;
+          }
+          const targetEl = document.querySelector(targetSel);
+          if (targetEl) {
+            e.preventDefault();
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // Custom cursor logic
+      const cursorDot = document.getElementById('cursor-dot');
+      window.addEventListener('mousemove', e => {
+        if (!cursorDot) return;
+        cursorDot.style.left = e.clientX + 'px';
+        cursorDot.style.top = e.clientY + 'px';
+      });
+      document.querySelectorAll('a, button, .glass-effect').forEach(el => {
+        el.addEventListener('mouseenter', () => cursorDot && cursorDot.classList.add('hovered'));
+        el.addEventListener('mouseleave', () => cursorDot && cursorDot.classList.remove('hovered'));
+      });
+
+      // Typing effect
+      const headline = document.getElementById('hero-headline');
+      const text = "Elaf Elsaeed: Architect of Digital Defense";
+      let i = 0;
+      (function typeWriter(){
+        if (!headline) return;
+        if (i < text.length) {
+          headline.innerHTML = text.substring(0, i + 1) + '<span class="typing-cursor"></span>';
+          i++;
+          setTimeout(typeWriter, 100);
+        } else {
+          const c = headline.querySelector('.typing-cursor');
+          if (c) c.style.display = 'none';
+        }
+      })();
+
+      // Scroll reveal animation
+      const revealElements = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1 });
+      revealElements.forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
